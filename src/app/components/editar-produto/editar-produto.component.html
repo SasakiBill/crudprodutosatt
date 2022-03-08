@@ -1,0 +1,25 @@
+<h1>Editar Produto</h1>
+
+<form [formGroup]="formEditar" (ngSubmit)="submitForm()">
+    <label>Nome:</label>
+    <input type="text" formControlName="nome"><br>
+    <div *ngIf="formEditar.controls['nome'].touched">
+        <small *ngIf="formEditar.controls['nome'].hasError('required')" style="color: red;">
+            Campo nome é obrigatório!
+        </small>
+        <small *ngIf="formEditar.controls['nome'].hasError('minlenght')" style="color: red;">
+            Campo nome requer 5 caracteres!
+        </small>
+    </div>
+    
+    <label>Preço:</label>
+    <input type="number" formControlName="preco"><br>
+    <div *ngIf="formEditar.controls['preco'].touched">
+        <small *ngIf="formEditar.controls['preco'].hasError('required')" style="color: red">
+            O campo preço é obrigatório!
+        </small>
+    </div>
+    <button type="submit">Salvar</button>
+</form>
+
+    

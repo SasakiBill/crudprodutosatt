@@ -1,0 +1,19 @@
+<button (click)="irParaCriarProduto()">Criar Produto</button>
+<h1>Lista de Produtos</h1>
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th>Operação</th>
+  </tr>
+  <tr *ngFor="let produto of lista_produtos; let i = index">
+    <td>{{produto.getNome()}}</td>
+    <td>{{produto.getPreco()}}</td>
+    <td>
+      <button (click)="excluir(i)">Excluir</button>
+      <button (click)="editar(i)">Editar</button>
+    </td>
+  </tr>
+</table>
+
+
